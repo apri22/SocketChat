@@ -13,7 +13,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_chat.*
-import kotlinx.android.synthetic.main.content_chat.recyclerView
 import java.io.File
 
 

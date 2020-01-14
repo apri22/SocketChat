@@ -1,5 +1,7 @@
 package com.apri.socketchat
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
@@ -18,6 +20,8 @@ class ChatAdapter : RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
 
     private val chatItems = mutableListOf<Chat>()
     val actionClick by lazy { PublishSubject.create<String>() }
+
+    private val duration = 250L
 
     fun addChat(chat: Chat) {
         chatItems.add(chat)
@@ -43,7 +47,21 @@ class ChatAdapter : RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-        holder.updateData(chatItems[position], position)
+        val chat = chatItems[position]
+        holder.updateData(chat, position)
+
+        this.setAnimation(holder.itemView)
+    }
+
+    private fun setAnimation(itemView: View) {
+        itemView.alpha = 0f
+        val animatorSet = AnimatorSet()
+        val animator = ObjectAnimator.ofFloat(itemView, "alpha", 0f, 0.5f, 1.0f)
+        ObjectAnimator.ofFloat(itemView, "alpha", 0f).start()
+        animator.startDelay = duration
+        animator.duration = duration
+        animatorSet.play(animator)
+        animator.start()
     }
 
 
