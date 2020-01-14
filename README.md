@@ -2,6 +2,10 @@
 
 Chatting App using socket connection.
 
+[Demo Video](https://drive.google.com/file/d/16hzQYsTcnEIOmqPjgRuo5zdGUASFK6se/view)
+
+[Download APK](https://drive.google.com/file/d/1TMfQXTU0p2FuwdkQB6zX_eJ-zGVNCk3_/view)
+
 ## This Project uses:
 - Websocket Server by Websocket.in ([docs](https://www.websocket.in/docs))
 - [Room](https://developer.android.com/topic/libraries/architecture/room)
